@@ -1,5 +1,5 @@
 pipeline {
-  agent "Hygieia-agent"
+  agent { label "Hygieia-node" }
   stages {
     stage ('Initialize') {
       steps {
