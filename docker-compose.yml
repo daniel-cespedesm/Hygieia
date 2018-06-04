@@ -45,11 +45,11 @@ services:
     depends_on:
       - db-setup
 
-   artifactory-artifact-collector:
-     build: collectors/artifact/artifactory
-     image: hygieia-artifactory-artifact-collector
-     depends_on:
-       - db-setup
+  artifactory-artifact-collector:
+    build: collectors/artifact/artifactory
+    image: hygieia-artifactory-artifact-collector
+    depends_on:
+      - db-setup
 
   bamboo-build-collector:
     build: collectors/build/bamboo
