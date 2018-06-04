@@ -3,7 +3,7 @@ services:
   api:
     environment: # for a full list check the corresponding properties-builder file
     - DB_DATABASE=dashboarddb
-    - DB_HOST=db
+    - DB_HOST=127.0.0.1
     - DB_PORT=27017
     - DB_USERNAME=dashboarduser
     - DB_PASSWORD=dbpassword
