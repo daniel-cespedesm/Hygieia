@@ -1,11 +1,21 @@
 pipeline {
   agent { label "Hygieia-node" }
   stages {
-    stage('Dockerize') {
+    stage('Build') {
       steps {
-        sh 'export DOCKER_HOST=127.0.0.1:2375'
-        sh 'docker-compose up -d'
+        sh 'mvn clean install'
       }
     }
+    stage('Hygieia config'){
+      steps {
+
+      }
+    }
+    stage('Dockerize') {
+      steps {
+        sh 'docker-compose build'
+      }
+    }
+    stage('')
   }
 }
