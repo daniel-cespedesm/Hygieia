@@ -1,9 +1,5 @@
 pipeline {
-  agent Hygieia-agent
-  tools {
-    maven 'Maven 3.3.9'
-    jdk 'jdk8'
-  }
+  agent "Hygieia-agent"
   stages {
     stage ('Initialize') {
       steps {
