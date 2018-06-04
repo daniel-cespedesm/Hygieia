@@ -12,10 +12,10 @@ if [ "$TEST_SCRIPT" != "" ]
 then
         #for testing locally
         PROP_FILE=application.properties
-else 
+else
 	PROP_FILE=config/hygieia-jenkins-build-collector.properties
 fi
-  
+
 if [ "$MONGO_PORT" != "" ]; then
 	# Sample: MONGO_PORT=tcp://172.17.0.20:27017
 	MONGODB_HOST=`echo $MONGO_PORT|sed 's;.*://\([^:]*\):\(.*\);\1;'`
@@ -41,7 +41,7 @@ then
 	DOCKER_LOCALHOST=10.0.2.2
 	MAPPED_URL=`echo "$JENKINS_MASTER"|sed "s|localhost|$DOCKER_LOCALHOST|"`
 	echo "Mapping localhost -> $MAPPED_URL"
-	JENKINS_MASTER=$MAPPED_URL	
+	JENKINS_MASTER=$MAPPED_URL
 fi
 
 echo $JENKINS_OP_CENTER|egrep localhost >>/dev/null
@@ -53,7 +53,7 @@ then
 	LOCALHOST=10.0.2.2
 	MAPPED_URL=`echo "$JENKINS_OP_CENTER"|sed "s|localhost|$LOCALHOST|"`
 	echo "Mapping localhost -> $MAPPED_URL"
-	JENKINS_OP_CENTER=$MAPPED_URL	
+	JENKINS_OP_CENTER=$MAPPED_URL
 fi
 
 cat > $PROP_FILE <<EOF
@@ -110,7 +110,7 @@ do
 		apiKey="JENKINS_API_KEY$i"
 		niceName="JENKINS_NAME$i"
 	fi
-	
+
 cat >> $PROP_FILE <<EOF
 jenkins.servers[${i}]=${!server}
 jenkins.usernames[${i}]=${!username}
@@ -118,7 +118,7 @@ jenkins.apiKeys[${i}]=${!apiKey}
 jenkins.niceNames[${i}]=${!niceName}
 
 EOF
-	
+
 	i=$(($i+1))
 done
 
