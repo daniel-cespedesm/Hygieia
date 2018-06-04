@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Dockerize') {
       steps {
+        sh 'export DOCKER_HOST=127.0.0.1'
         sh 'docker-compose up -d'
       }
     }
