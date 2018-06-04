@@ -1,3 +1,5 @@
+## This file triggers the pipeline to build, dockerize and start up Hygieia
+
 pipeline {
   agent { label "Hygieia-node" }
   stages {
