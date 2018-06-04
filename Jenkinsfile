@@ -19,7 +19,7 @@ pipeline {
         }
       }
     }
-    stage('Docker-Build'){
+    stage('Dockerize') {
       steps {
         sh 'docker-compose build'
       }
