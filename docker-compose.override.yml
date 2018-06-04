@@ -14,13 +14,6 @@ services:
     - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
     - GITHUB_CRON=0 * * * * *
     - GITHUB_COMMIT_THRESHOLD_DAYS=300
-  jira-collector:
-    environment:
-    - JIRA_BASE_URL=https://mycompany.atlassian.net/
-    - JIRA_CREDENTIALS=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-    - JIRA_ISSUE_TYPE_ID=10200
-    - JIRA_SPRINT_DATA_FIELD_NAME=customfield_10007
-    - JIRA_EPIC_FIELD_NAME=customfield_10008
   jenkins-build-collector:
     environment:
     - JENKINS_CRON=0 * * * * *
@@ -34,7 +27,3 @@ services:
     - JENKINS_USERNAME=gorilla
     - JENKINS_PASSWORD=GorillaLogic
     - JENKINS_CUCUMBER_JSON_FILENAME=cucumber-report.json
-  sonar-codequality-collector:
-    environment:
-    - SONAR_URL=http://192.168.99.100:9000
-    - SONAR_CRON=0 * * * * *
