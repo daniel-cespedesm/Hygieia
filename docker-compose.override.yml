@@ -7,7 +7,7 @@ services:
     - DB_PORT=27017
     - DB_USERNAME=dashboarduser
     - DB_PASSWORD=dbpassword
-   volumes:
+    volumes:
     - ./logs:/hygieia/logs
 hygieia-github-scm-collector:
   environment:
