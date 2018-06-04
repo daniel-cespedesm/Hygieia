@@ -1,0 +1,10 @@
+pipeline {
+  agent { label "Hygieia-node" }
+  stages {
+    stage('Dockerize') {
+      steps {
+        sh 'docker-compose up -d'
+      }
+    }
+  }
+}
