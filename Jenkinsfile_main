@@ -8,13 +8,11 @@ pipeline {
     }
     stage('Dockerize') {
       steps {
-        sh 'export DOCKER_HOST=127.0.0.1:2375'
         sh 'docker-compose build'
       }
     }
     stage('Start up') {
       steps {
-        sh 'export DOCKER_HOST=127.0.0.1:2375'
         sh 'docker-compose up -d'
       }
     }
