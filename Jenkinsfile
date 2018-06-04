@@ -14,9 +14,17 @@ pipeline {
         sh 'mvn clean install'
       }
       post {
-        success {
-          archiveArtifacts artifacts: '*/target/*.jar', fingerprint: true
+        failure {
+          sh 'mvn clean install -rf :UI'
         }
+      }
+    }
+    stage('Docker Build'){
+      steps {
+        sh 'docker-compose build'
+      }
+      steps {
+        sh 'docker-compose build'
       }
     }
   }
