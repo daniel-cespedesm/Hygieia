@@ -14,14 +14,14 @@ services:
     - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
     - GITHUB_CRON=0 * * * * *
     - GITHUB_COMMIT_THRESHOLD_DAYS=300
-  jira-feature-collector:
+  hygieia-jira-feature-collector:
     environment:
     - JIRA_BASE_URL=https://mycompany.atlassian.net/
     - JIRA_CREDENTIALS=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
     - JIRA_ISSUE_TYPE_ID=10200
     - JIRA_SPRINT_DATA_FIELD_NAME=customfield_10007
     - JIRA_EPIC_FIELD_NAME=customfield_10008
-  jenkins-build-collector:
+  hygieia-jenkins-build-collector:
     environment:
     - JENKINS_CRON=0 * * * * *
     - JENKINS_MASTER=http://10.0.0.7:8081
