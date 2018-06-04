@@ -6,16 +6,15 @@ pipeline {
         sh 'mvn clean install'
       }
     }
-    stage('Hygieia config'){
-      steps {
-
-      }
-    }
     stage('Dockerize') {
       steps {
         sh 'docker-compose build'
       }
     }
-    stage('')
+    stage('Start up') {
+      steps {
+        sh 'docker-compose up -d'
+      }
+    }
   }
 }
