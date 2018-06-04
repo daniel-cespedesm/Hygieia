@@ -1,0 +1,40 @@
+version: '3'
+services:
+  api:
+    environment: # for a full list check the corresponding properties-builder file
+    - DB_DATABASE=dashboarddb
+    - DB_HOST=db
+    - DB_PORT=27017
+    - DB_USERNAME=dashboarduser
+    - DB_PASSWORD=dbpassword
+   volumes:
+    - ./logs:/hygieia/logs
+hygieia-github-scm-collector:
+  environment:
+  - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
+  - GITHUB_CRON=0 * * * * *
+  - GITHUB_COMMIT_THRESHOLD_DAYS=300
+hygieia-jira-feature-collector:
+  environment:
+  - JIRA_BASE_URL=https://mycompany.atlassian.net/
+  - JIRA_CREDENTIALS=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  - JIRA_ISSUE_TYPE_ID=10200
+  - JIRA_SPRINT_DATA_FIELD_NAME=customfield_10007
+  - JIRA_EPIC_FIELD_NAME=customfield_10008
+hygieia-jenkins-build-collector:
+  environment:
+  - JENKINS_CRON=0 * * * * *
+  - JENKINS_MASTER=http://10.0.0.7:8081
+  - JENKINS_USERNAME=gorilla
+  - JENKINS_PASSWORD=GorillaLogic
+hygieia-jenkins-cucumber-test-collector:
+  environment:
+  - JENKINS_CRON=0 * * * * *
+  - JENKINS_MASTER=http://10.0.0.7:8081
+  - JENKINS_USERNAME=gorilla
+  - JENKINS_PASSWORD=GorillaLogic
+  - JENKINS_CUCUMBER_JSON_FILENAME=cucumber-report.json
+hygieia-sonar-codequality-collector:
+  environment:
+  - SONAR_URL=http://192.168.99.100:9000
+  - SONAR_CRON=0 * * * * *
