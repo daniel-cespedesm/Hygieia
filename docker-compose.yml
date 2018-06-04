@@ -39,41 +39,41 @@ services:
     ports:
       - "3000:80"
 
-  # appdynamics-collector:
-  #   build: collectors/performance/appdynamics
-  #   image: hygieia-appdynamics-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # artifactory-artifact-collector:
-  #   build: collectors/artifact/artifactory
-  #   image: hygieia-artifactory-artifact-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # bamboo-build-collector:
-  #   build: collectors/build/bamboo
-  #   image: hygieia-bamboo-build-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # bitbucket-collector:
-  #   build: collectors/scm/bitbucket
-  #   image: hygieia-bitbucket-scm-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # chat-ops-collector:
-  #   build: collectors/misc/chat-ops
-  #   image: hygieia-chat-ops-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # hpsm-cmdb-collector:
-  #   build: collectors/cmdb/hpsm
-  #   image: hygieia-hpsm-cmdb-collector
-  #   depends_on:
-  #     - db-setup
+  appdynamics-collector:
+    build: collectors/performance/appdynamics
+    image: hygieia-appdynamics-collector
+    depends_on:
+      - db-setup
+
+  artifactory-artifact-collector:
+    build: collectors/artifact/artifactory
+    image: hygieia-artifactory-artifact-collector
+    depends_on:
+      - db-setup
+
+  bamboo-build-collector:
+    build: collectors/build/bamboo
+    image: hygieia-bamboo-build-collector
+    depends_on:
+      - db-setup
+
+  bitbucket-collector:
+    build: collectors/scm/bitbucket
+    image: hygieia-bitbucket-scm-collector
+    depends_on:
+      - db-setup
+
+  chat-ops-collector:
+    build: collectors/misc/chat-ops
+    image: hygieia-chat-ops-collector
+    depends_on:
+      - db-setup
+
+  hpsm-cmdb-collector:
+    build: collectors/cmdb/hpsm
+    image: hygieia-hpsm-cmdb-collector
+    depends_on:
+      - db-setup
 
   github-collector:
     build: collectors/scm/github
@@ -87,17 +87,17 @@ services:
     depends_on:
       - db-setup
 
-  # gitlab-feature-collector:
-  #   build: collectors/feature/gitlab
-  #   image: hygieia-gitlab-feature-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # gitlab-scm-collector:
-  #   build: collectors/feature/gitlab
-  #   image: hygieia-gitlab-scm-collector
-  #   depends_on:
-  #     - db-setup
+  gitlab-feature-collector:
+    build: collectors/feature/gitlab
+    image: hygieia-gitlab-feature-collector
+    depends_on:
+      - db-setup
+
+  gitlab-scm-collector:
+    build: collectors/feature/gitlab
+    image: hygieia-gitlab-scm-collector
+    depends_on:
+      - db-setup
 
   jenkins-build-collector:
     build: collectors/build/jenkins
@@ -117,47 +117,47 @@ services:
     depends_on:
       - db-setup
 
-  # jira-collector:
-  #   build: collectors/feature/jira
-  #   image: hygieia-jira-feature-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # nexus-iq-collector:
-  #   build: collectors/library-policy/nexus-iq-collector
-  #   image: hygieia-nexus-iq-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # sonar-codequality-collector:
-  #   build: collectors/build/sonar
-  #   image: hygieia-sonar-codequality-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # subversion-collector:
-  #   build: collectors/scm/subversion
-  #   image: hygieia-subversion-scm-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # udeploy-collector:
-  #   build: collectors/deploy/udeploy
-  #   image: hygieia-udeploy-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # versionone-collector:
-  #   build: collectors/feature/versionone
-  #   image: hygieia-versionone-collector
-  #   depends_on:
-  #     - db-setup
-  #
-  # xldeploy-collector:
-  #   build: collectors/deploy/xldeploy
-  #   image: hygieia-xldeploy-collector
-  #   depends_on:
-  #     - db-setup
+  jira-collector:
+    build: collectors/feature/jira
+    image: hygieia-jira-feature-collector
+    depends_on:
+      - db-setup
+
+  nexus-iq-collector:
+    build: collectors/library-policy/nexus-iq-collector
+    image: hygieia-nexus-iq-collector
+    depends_on:
+      - db-setup
+
+  sonar-codequality-collector:
+    build: collectors/build/sonar
+    image: hygieia-sonar-codequality-collector
+    depends_on:
+      - db-setup
+
+  subversion-collector:
+    build: collectors/scm/subversion
+    image: hygieia-subversion-scm-collector
+    depends_on:
+      - db-setup
+
+  udeploy-collector:
+    build: collectors/deploy/udeploy
+    image: hygieia-udeploy-collector
+    depends_on:
+      - db-setup
+
+  versionone-collector:
+    build: collectors/feature/versionone
+    image: hygieia-versionone-collector
+    depends_on:
+      - db-setup
+
+  xldeploy-collector:
+    build: collectors/deploy/xldeploy
+    image: hygieia-xldeploy-collector
+    depends_on:
+      - db-setup
 
   score-collector:
     build: collectors/misc/score
