@@ -9,7 +9,7 @@ services:
     - DB_PASSWORD=dbpassword
     volumes:
     - ./logs:/hygieia/logs
-  github-scm-collector:
+  hygieia-github-scm-collector:
     environment:
     - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
     - GITHUB_CRON=0 * * * * *
