@@ -9,21 +9,21 @@ services:
     - DB_PASSWORD=dbpassword
     volumes:
     - ./logs:/hygieia/logs
-  github-collector:
-    environment:
-    - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
-    - GITHUB_CRON=0 * * * * *
-    - GITHUB_COMMIT_THRESHOLD_DAYS=300
-  jenkins-build-collector:
-    environment:
-    - JENKINS_CRON=0 * * * * *
-    - JENKINS_MASTER=http://10.0.0.7:8081
-    - JENKINS_USERNAME=gorilla
-    - JENKINS_PASSWORD=GorillaLogic
-  jenkins-cucumber-test-collector:
-    environment:
-    - JENKINS_CRON=0 * * * * *
-    - JENKINS_MASTER=http://10.0.0.7:8081
-    - JENKINS_USERNAME=gorilla
-    - JENKINS_PASSWORD=GorillaLogic
-    - JENKINS_CUCUMBER_JSON_FILENAME=cucumber-report.json
+  # github-collector:
+  #   environment:
+  #   - GITHUB_HOST=https://github.com/daniel-cespedesm/gl-devops_challenge
+  #   - GITHUB_CRON=0 * * * * *
+  #   - GITHUB_COMMIT_THRESHOLD_DAYS=300
+  # jenkins-build-collector:
+  #   environment:
+  #   - JENKINS_CRON=0 * * * * *
+  #   - JENKINS_MASTER=http://10.0.0.7:8081
+  #   - JENKINS_USERNAME=gorilla
+  #   - JENKINS_PASSWORD=GorillaLogic
+  # jenkins-cucumber-test-collector:
+  #   environment:
+  #   - JENKINS_CRON=0 * * * * *
+  #   - JENKINS_MASTER=http://10.0.0.7:8081
+  #   - JENKINS_USERNAME=gorilla
+  #   - JENKINS_PASSWORD=GorillaLogic
+  #   - JENKINS_CUCUMBER_JSON_FILENAME=cucumber-report.json
