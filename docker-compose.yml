@@ -4,7 +4,7 @@
 version: '3'
 services:
   db:
-    image: mongo:latest
+    image: dacesmo/hygieia-mongo:latest
     ports:
       - "27017:27017"
     volumes:
@@ -75,17 +75,17 @@ services:
   #   depends_on:
   #     - db-setup
 
-  github-collector:
-    build: collectors/scm/github
-    image: hygieia-github-scm-collector
-    depends_on:
-      - db-setup
-
-  github-graphql-collector:
-    build: collectors/scm/github-graphql
-    image: hygieia-github-graphql-scm-collector
-    depends_on:
-      - db-setup
+  # github-collector:
+  #   build: collectors/scm/github
+  #   image: hygieia-github-scm-collector
+  #   depends_on:
+  #     - db-setup
+  #
+  # github-graphql-collector:
+  #   build: collectors/scm/github-graphql
+  #   image: hygieia-github-graphql-scm-collector
+  #   depends_on:
+  #     - db-setup
 
   # gitlab-feature-collector:
   #   build: collectors/feature/gitlab
@@ -99,23 +99,23 @@ services:
   #   depends_on:
   #     - db-setup
 
-  jenkins-build-collector:
-    build: collectors/build/jenkins
-    image: hygieia-jenkins-build-collector
-    depends_on:
-      - db-setup
-
-  jenkins-codequality-collector:
-    build: collectors/build/jenkins-codequality
-    image: hygieia-jenkins-codequality-collector
-    depends_on:
-      - db-setup
-
-  jenkins-cucumber-test-collector:
-    build: collectors/build/jenkins-cucumber
-    image: hygieia-jenkins-cucumber-test-collector
-    depends_on:
-      - db-setup
+  # jenkins-build-collector:
+  #   build: collectors/build/jenkins
+  #   image: hygieia-jenkins-build-collector
+  #   depends_on:
+  #     - db-setup
+  #
+  # jenkins-codequality-collector:
+  #   build: collectors/build/jenkins-codequality
+  #   image: hygieia-jenkins-codequality-collector
+  #   depends_on:
+  #     - db-setup
+  #
+  # jenkins-cucumber-test-collector:
+  #   build: collectors/build/jenkins-cucumber
+  #   image: hygieia-jenkins-cucumber-test-collector
+  #   depends_on:
+  #     - db-setup
 
   # jira-collector:
   #   build: collectors/feature/jira
