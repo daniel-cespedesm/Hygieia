@@ -183,7 +183,7 @@
         <module>core</module>
         <module>api</module>
         <module>api-audit</module>
-        <module>collectors/feature/rally</module>
+        <!-- <module>collectors/feature/rally</module>
         <module>collectors/artifact/artifactory</module>
         <module>collectors/build/bamboo</module>
         <module>collectors/build/jenkins</module>
@@ -206,7 +206,7 @@
         <module>collectors/cmdb/hpsm</module>
         <module>collectors/library-policy/nexus-iq-collector</module>
         <module>collectors/misc/score</module>
-        <module>hygieia-jenkins-plugin</module>
+        <module>hygieia-jenkins-plugin</module> -->
         <module>UI</module>
         <module>UI-tests</module>
       </modules>
@@ -232,7 +232,7 @@
         <module>core</module>
         <module>api</module>
         <module>api-audit</module>
-        <module>collectors/artifact/artifactory</module>
+        <!-- <module>collectors/artifact/artifactory</module>
         <module>collectors/build/bamboo</module>
         <module>collectors/build/jenkins</module>
         <module>collectors/build/jenkins-cucumber</module>
@@ -254,7 +254,7 @@
         <module>collectors/cmdb/hpsm</module>
         <module>collectors/library-policy/nexus-iq-collector</module>
         <module>collectors/misc/score</module>
-        <module>hygieia-jenkins-plugin</module>
+        <module>hygieia-jenkins-plugin</module> -->
      	  <module>UI</module>
         <module>UI-tests</module>
  </modules>
