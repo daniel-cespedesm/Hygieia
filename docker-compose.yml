@@ -4,7 +4,7 @@
 version: '3'
 services:
   db:
-    image: dacesmo/hygieia-mongo:latest
+    image: dacesmo/hygieia:mongo
     ports:
       - "27017:27017"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   api:
     build: api
-    image: hygieia-api
+    image: dacesmo/hygieia:api
     depends_on:
       - db-setup
     ports:
@@ -25,7 +25,7 @@ services:
 
   api-audit:
     build: api-audit
-    image: hygieia-api-audit
+    image: dacesmo/hygieia:api-audit
     depends_on:
       - db-setup
     ports:
@@ -33,7 +33,7 @@ services:
 
   ui:
     build: UI
-    image: hygieia-ui
+    image: dacesmo/hygieia:ui
     depends_on:
       - api
     ports:
