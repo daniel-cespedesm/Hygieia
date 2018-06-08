@@ -11,7 +11,7 @@ pipeline {
         sh 'docker-compose build'
       }
     }
-    stage('Push files to dockerhub repo') {
+    stage('Push docker images') {
       steps {
         sh 'docker login --username=dacesmo --password=Secu!3re'
         sh 'docker-compose push'
